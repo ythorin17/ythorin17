@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif">
-<!--WINDMILL-STYLE-->.wm-rotor .wm-css0{animation:wm-css 13.846s linear infinite}@keyframes wm-css{from{transform:rotate(0)}to{transform:rotate(360deg)}}.wm-rotor:hover .wm-css0{animation-play-state:paused}<!--/WINDMILL-STYLE-->
+<!--WINDMILL-STYLE-->.wm-fast{animation:wm-fast 18.46s linear infinite;transform-box:fill-box;transform-origin:0 0}.wm-brake{animation:wm-brake 923.08s linear infinite;transform-box:fill-box;transform-origin:0 0}@keyframes wm-fast{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@keyframes wm-brake{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}.wm-rotor:hover .wm-fast{animation-play-state:paused}<!--/WINDMILL-STYLE-->
   <title>ythorin17 — blooming banner</title>
   <defs>
     <path id="petal" d="M0 0 C-15 -18 -16 -48 0 -62 C16 -48 15 -18 0 0 Z"/>
@@ -410,22 +410,21 @@
   </g>
 
   <!-- windmill: spins at the real wind speed, see scripts/windmill.py -->
-  <g transform="translate(232,80)">
-<!--WINDMILL-->
-<g>
-<animate attributeName="opacity" from="0" to="1" begin="1.9s" dur="0.9s" fill="freeze"/>
-<path d="M-5.8 0 L-10.1 45.8 L10.1 45.8 L5.8 0 Z" fill="#8b949e" fill-opacity="0.13"/>
-<path d="M-6.6 9.2 H 6.6" stroke="#8b949e" stroke-opacity="0.3" stroke-width="1.4"/>
-<path d="M-7.5 18.3 H 7.5" stroke="#8b949e" stroke-opacity="0.3" stroke-width="1.4"/>
-<path d="M-8.4 27.5 H 8.4" stroke="#8b949e" stroke-opacity="0.3" stroke-width="1.4"/>
-<path d="M-9.2 36.6 H 9.2" stroke="#8b949e" stroke-opacity="0.3" stroke-width="1.4"/>
-<path d="M-5.8 1 L-10.1 45.8" stroke="#8b949e" stroke-opacity="0.55" stroke-width="2.2" stroke-linecap="round"/>
-<path d="M5.8 1 L10.1 45.8" stroke="#8b949e" stroke-opacity="0.55" stroke-width="2.2" stroke-linecap="round"/>
-<path d="M-3.4 45.8 L-3.4 35.0 Q0 28.5 3.4 35.0 L3.4 45.8 Z" fill="#E2542F" fill-opacity="0.45"/>
-<g transform="translate(0,-19.8)"><g class="wm-rotor"><g transform="rotate(0)"><path d="M11 -7 C21 -27 9 -23.76 0 -36.00 C-9 -23.76 -21 -27 -11 -7 Z" fill="#F4795B"/><circle cx="0" cy="-36.00" r="3.00" fill="#E2542F"/></g><g transform="rotate(45)"><path d="M11 -7 C21 -27 9 -23.76 0 -36.00 C-9 -23.76 -21 -27 -11 -7 Z" fill="#F4795B"/><circle cx="0" cy="-36.00" r="3.00" fill="#E2542F"/></g><g transform="rotate(90)"><path d="M11 -7 C21 -27 9 -23.76 0 -36.00 C-9 -23.76 -21 -27 -11 -7 Z" fill="#F4795B"/><circle cx="0" cy="-36.00" r="3.00" fill="#E2542F"/></g><g transform="rotate(135)"><path d="M11 -7 C21 -27 9 -23.76 0 -36.00 C-9 -23.76 -21 -27 -11 -7 Z" fill="#F4795B"/><circle cx="0" cy="-36.00" r="3.00" fill="#E2542F"/></g><g transform="rotate(180)"><path d="M11 -7 C21 -27 9 -23.76 0 -36.00 C-9 -23.76 -21 -27 -11 -7 Z" fill="#F4795B"/><circle cx="0" cy="-36.00" r="3.00" fill="#E2542F"/></g><g transform="rotate(225)"><path d="M11 -7 C21 -27 9 -23.76 0 -36.00 C-9 -23.76 -21 -27 -11 -7 Z" fill="#F4795B"/><circle cx="0" cy="-36.00" r="3.00" fill="#E2542F"/></g><g transform="rotate(270)"><path d="M11 -7 C21 -27 9 -23.76 0 -36.00 C-9 -23.76 -21 -27 -11 -7 Z" fill="#F4795B"/><circle cx="0" cy="-36.00" r="3.00" fill="#E2542F"/></g><g transform="rotate(315)"><path d="M11 -7 C21 -27 9 -23.76 0 -36.00 C-9 -23.76 -21 -27 -11 -7 Z" fill="#F4795B"/><circle cx="0" cy="-36.00" r="3.00" fill="#E2542F"/></g><animateTransform class="wm-css0" attributeName="transform" type="rotate" from="0" to="360" dur="13.846s" repeatCount="indefinite" additive="sum"/><animateTransform class="wm-smil0" attributeName="transform" type="rotate" from="0" to="360" dur="27.692s" repeatCount="indefinite" additive="sum"/></g><circle r="7.0" fill="#FFD9A0" stroke="#E2542F" stroke-width="2"/><circle r="2.5" fill="#E2542F"/></g>
-<text x="0" y="62.8" text-anchor="middle" font-size="11" letter-spacing="0.6" fill="#8b949e">6.0 km/h · Beaufort 2</text>
-</g>
-<!--/WINDMILL-->
+  <g transform="translate(272,150)">
+  <!--WINDMILL-->
+  <g>
+  <animate attributeName="opacity" from="0" to="1" begin="1.9s" dur="0.9s" fill="freeze"/>
+  <path d="M-3.9 -44.0 L-7.2 0 L7.2 0 L3.9 -44.0 Z" fill="#8b949e" fill-opacity="0.14"/>
+  <path d="M-4.7 -33.0 H 4.7" stroke="#8b949e" stroke-opacity="0.3" stroke-width="1.3"/>
+  <path d="M-5.5 -22.0 H 5.5" stroke="#8b949e" stroke-opacity="0.3" stroke-width="1.3"/>
+  <path d="M-6.4 -11.0 H 6.4" stroke="#8b949e" stroke-opacity="0.3" stroke-width="1.3"/>
+  <path d="M-3.9 -43.0 L-7.2 0" stroke="#8b949e" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M3.9 -43.0 L7.2 0" stroke="#8b949e" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M-2.3 0 L-2.3 -15.0 Q0 -20.4 2.3 -15.0 L2.3 0 Z" fill="#E2542F" fill-opacity="0.45"/>
+  <g class="wm-rotor"><g transform="translate(0,-72.5)"><g class="wm-base"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="18.46s" repeatCount="indefinite"/><g class="wm-fast"><g class="wm-brake"><g transform="rotate(0)"><path d="M0 -3.00 Q9.00 -8.40 3.06 -22.20 Q0 -30.60 -3.06 -22.20 Q-9.00 -8.40 0 -3.00 Z" fill="#F4795B"/></g><g transform="rotate(45)"><path d="M0 -3.00 Q9.00 -8.40 3.06 -22.20 Q0 -30.60 -3.06 -22.20 Q-9.00 -8.40 0 -3.00 Z" fill="#F4795B"/></g><g transform="rotate(90)"><path d="M0 -3.00 Q9.00 -8.40 3.06 -22.20 Q0 -30.60 -3.06 -22.20 Q-9.00 -8.40 0 -3.00 Z" fill="#F4795B"/></g><g transform="rotate(135)"><path d="M0 -3.00 Q9.00 -8.40 3.06 -22.20 Q0 -30.60 -3.06 -22.20 Q-9.00 -8.40 0 -3.00 Z" fill="#F4795B"/></g><g transform="rotate(180)"><path d="M0 -3.00 Q9.00 -8.40 3.06 -22.20 Q0 -30.60 -3.06 -22.20 Q-9.00 -8.40 0 -3.00 Z" fill="#F4795B"/></g><g transform="rotate(225)"><path d="M0 -3.00 Q9.00 -8.40 3.06 -22.20 Q0 -30.60 -3.06 -22.20 Q-9.00 -8.40 0 -3.00 Z" fill="#F4795B"/></g><g transform="rotate(270)"><path d="M0 -3.00 Q9.00 -8.40 3.06 -22.20 Q0 -30.60 -3.06 -22.20 Q-9.00 -8.40 0 -3.00 Z" fill="#F4795B"/></g><g transform="rotate(315)"><path d="M0 -3.00 Q9.00 -8.40 3.06 -22.20 Q0 -30.60 -3.06 -22.20 Q-9.00 -8.40 0 -3.00 Z" fill="#F4795B"/></g></g></g></g><circle r="6.5" fill="#FFD9A0" stroke="#E2542F" stroke-width="2"/><circle r="2.2" fill="#E2542F"/></g></g>
+  <text x="12.2" y="13" text-anchor="start" font-size="11" letter-spacing="0.6" fill="#8b949e">5.5 km/h · Beaufort 1</text>
+  </g>
+  <!--/WINDMILL-->
 </g>
 
   <!-- text -->

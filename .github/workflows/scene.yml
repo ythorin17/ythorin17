@@ -33,21 +33,8 @@ jobs:
         with:
           ref: main
 
-      # the windmill is ours, not living-scene's: it lives outside the
-      # <!--WEATHER--> markers, so this only rewrites its spin speed, and only
-      # when the real wind has moved a quarter km/h. Runs first so the commit
-      # below sweeps both changes up together.
-      - name: refresh the windmill's spin to the current wind
-        if: always()
-        env:
-          SCENE_LAT: "30.5928"
-          SCENE_LON: "114.3055"
-          SCENE_TZ: Asia/Shanghai
-          FORCE: ${{ inputs.force }}
-        run: python3 scripts/wind.py
-
       # paints the live weather into the banner (between its <!--WEATHER--> markers),
-      # writes header-night.svg next to it, and draws the seasonal footer
+      # writes header-night.svg next to it, and REDRAWS both garden footers
       - uses: yuki4266/living-scene@v1
         with:
           lat: "30.5928"          # Wuhan, Hubei
@@ -60,20 +47,35 @@ jobs:
           force: ${{ inputs.force }}
           commit-message: "🌦 scene sync: {state}"
 
-      # living-scene only commits the files it owns, so pick up the windmill too
-      - name: commit the windmill if the wind moved it
+      # The windmill has to go in AFTER living-scene: that action rewrites both
+      # garden footers from scratch on every run, so anything injected earlier is
+      # thrown away. Running last also means this step is what re-adds the windmill
+      # when the season changes and the footers are replaced.
+      #
+      # wind.py only rewrites the spin when the real wind moved a quarter km/h, so
+      # a steady breeze changes nothing and git records no commit.
+      - name: paint the windmill and set its spin to the current wind
+        if: always()
+        env:
+          SCENE_LAT: "30.5928"
+          SCENE_LON: "114.3055"
+          SCENE_TZ: Asia/Shanghai
+          FORCE: ${{ inputs.force }}
+        run: python3 scripts/wind.py
+
+      - name: commit the windmill
         if: always()
         env:
           BRANCH: main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add header.svg header-night.svg
+          git add -A
           if git diff --cached --quiet; then
-            echo "windmill unchanged"
+            echo "windmill unchanged — nothing to commit"
             exit 0
           fi
-          SPEED=$(grep -o 'class="wm-css0"[^>]*dur="[0-9.]*s"' header.svg | head -1 || true)
-          git commit -m "🌬 windmill sync: ${SPEED:-spin refresh}"
+          SPEED=$(grep -o 'class="wm-base"[^>]*dur="[0-9.]*s"' header.svg | head -1 || true)
+          git commit -m "🌬 windmill sync  ${SPEED:-spin refresh}"
           git pull --rebase origin "$BRANCH"
           git push origin "HEAD:$BRANCH"
