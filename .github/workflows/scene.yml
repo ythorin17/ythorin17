@@ -1,0 +1,48 @@
+# Living scene: repaints header.svg to match the real weather in Wuhan,
+# and draws the seasonal garden footer. https://github.com/yuki4266/living-scene
+name: Living scene
+
+on:
+  schedule:
+    # every three hours, at :23 past — off the hour, because scheduled runs
+    # at :00 queue behind everyone else's cron and get delayed
+    - cron: "23 */3 * * *"
+  workflow_dispatch:
+    inputs:
+      weather:
+        description: "Pin the weather — clear/clouds/rain/snow/fog/storm. Blank uses the real forecast."
+        required: false
+        default: ""
+      season:
+        description: "Pin the season — spring/summer/autumn/winter. Blank uses today's date."
+        required: false
+        default: ""
+      force:
+        description: "Re-render even if the scene has not changed"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+jobs:
+  scene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      # paints the live weather into the banner (between its <!--WEATHER--> markers),
+      # writes header-night.svg next to it, and draws the seasonal footer
+      - uses: yuki4266/living-scene@v1
+        with:
+          lat: "30.5928"          # Wuhan, Hubei
+          lon: "114.3055"
+          tz: Asia/Shanghai
+          header: header.svg
+          sky: "false"
+          weather: ${{ inputs.weather }}
+          season: ${{ inputs.season }}
+          force: ${{ inputs.force }}
+          commit-message: "🌦 scene sync: {state}"
