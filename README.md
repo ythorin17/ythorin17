@@ -6,6 +6,15 @@
   </picture>
 </div>
 
+<div align="center">
+
+### Hi, I'm Aurora 👋
+
+A student working on **computer vision** and **embedded systems** — currently building an
+image-based fruit quality inspection system, from the camera pipeline up to the board it runs on.
+
+</div>
+
 <!-- ============ Tech Garden ============ -->
 <div align="center">
 
