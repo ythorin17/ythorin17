@@ -1,0 +1,10 @@
+# Keep the files this repo depends on byte-stable across platforms.
+# The workflows are run by GitHub Actions on Linux, and streak.yml diffs its own
+# SVGs to decide whether to commit — a CRLF rewrite would show up as a change.
+
+* text=auto eol=lf
+
+*.svg  text eol=lf
+*.yml  text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
